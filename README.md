@@ -11,17 +11,17 @@ harald.popke@hp-dv-systeme.de
 
 Das Skript darf frei verwendet und geändert werden. Es unterliegt keinen Nutzungsbedingungen. 
 
-Das Skript darf frei verwendet und geändert werden. Es unterliegt keinen Nutzungsbedingungen. 
-    
+  
 !!Die Ausführung erfolgt auf eigene Gefahr!! 
 
 Das Skript gibt pro bearbeiteten Benutzer eine Rückmeldung mit einer fortlaufenden Nummer:
     
 Beispiel:
+```
      1 - B41$0000009855 : Setze Kennwort und Pin auf 01121990";
      2 - B41$0000066894 : Setze Kennwort und Pin auf 12122000";
      3 - B41$0000015696 : hat kein Geburtsdatum und wird übersprungen!";
-
+```
 Sollte das Skript unterbrochen werden, kann so sehr einfach die user_ids.txt um die bereits bearbeiten Fälle gekürzt werden.
 
 Aufruf des Skriptes: Einfach auf der Konsole "php alma-pin.php" eingeben.
