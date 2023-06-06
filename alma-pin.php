@@ -84,7 +84,8 @@ function setPassword($user_id, $api_key){
     $options = array(
         'http' => array(
             'header'  => "Accept: application/json\r\n",
-            'method'  => 'GET'
+            'method'  => 'GET',
+            'ignore_errors' => true
         )
     );
 
@@ -96,7 +97,8 @@ function setPassword($user_id, $api_key){
 
      // Auswerten ob die Anfrage erfolgreich war
     if($http_response_header[0] != "HTTP/1.1 200 OK"){
-         return("$user_id : Fehler beim Abruf des Benutzers!");
+        echo $response;
+        return("$user_id : Fehler beim Abruf des Benutzers!");
     }
 
     // Decodieren der JSON-Antwort in eine Datenstruktur
@@ -145,6 +147,7 @@ function setPassword($user_id, $api_key){
         'http' => array(
             'header'  => "Content-type: application/json\r\n",
             'method'  => 'PUT',
+            'ignore_errors' => true,
             'content' => $jsonData
         )
     );
@@ -159,6 +162,7 @@ function setPassword($user_id, $api_key){
     if($http_response_header[0] == "HTTP/1.1 200 OK"){
         return "$user_id : Setze Kennwort und Pin auf $new_password";
     }else{
+        echo $sendResponse;
         return "$user_id : Es ist ein Fehler aufgetreten!";
     }
 }
