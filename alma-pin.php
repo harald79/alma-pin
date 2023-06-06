@@ -97,7 +97,7 @@ function setPassword($user_id, $api_key){
 
      // Auswerten ob die Anfrage erfolgreich war
     if($http_response_header[0] != "HTTP/1.1 200 OK"){
-        echo $response;
+        echo $response."\n";
         return("$user_id : Fehler beim Abruf des Benutzers!");
     }
 
@@ -162,7 +162,7 @@ function setPassword($user_id, $api_key){
     if($http_response_header[0] == "HTTP/1.1 200 OK"){
         return "$user_id : Setze Kennwort und Pin auf $new_password";
     }else{
-        echo $sendResponse;
+        echo $sendResponse."\n";
         return "$user_id : Es ist ein Fehler aufgetreten!";
     }
 }
